@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Welcome to Mongo</title>
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<h1>Welcome to MongoDB</h1>
+			<div class="guestbook_input">
+			<form method="post" class="form" action="/newguest" method="post">
+			  Name: <input type="text" name="name"/>
+			  Email: <input type="text" name="email"/>
+			  <input type="submit" value='Add Guest'/>
+			</form>
+			</div>
+			<div class="guestbook">
+				<h3>Guests:</h3>
+				%for name in mynames:
+				<div class="name">
+				<h5>Name:</h5> {{name['name']}},
+				<h5>Email:</h5> {{name['email']}}
+				%end
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
